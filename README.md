@@ -75,81 +75,81 @@ Conforme a especificação técnica, abaixo estão as entradas que devem ser sub
 
 
 Case #1
-```
-Input:
+```javascript
+//Input:
 [{"operation":"buy", "unit-cost":10.00, "quantity": 100},{"operation":"sell", "unit-cost":15.00, "quantity": 50},{"operation":"sell", "unit-cost":15.00, "quantity": 50}]
 
-Output:
+//Output:
 [{"tax": 0.00},{"tax": 0.00},{"tax": 0.00}]
 
 ```
 
 Case #2
-```
-Input:
+```javascript
+//Input:
 [{"operation":"buy", "unit-cost":10.00, "quantity": 10000},{"operation":"sell", "unit-cost":20.00, "quantity": 5000},{"operation":"sell", "unit-cost":5.00, "quantity": 5000}]
 
-Output:
+//Output:
 [{"tax": 0.00},{"tax": 10000.00},{"tax": 0.00}]
 ```
 
 Case #1 + Case #2
-```
-Input:
+```javascript
+//Input:
 [{"operation":"buy", "unit-cost":10.00, "quantity": 100},{"operation":"sell", "unit-cost":15.00, "quantity": 50},{"operation":"sell", "unit-cost":15.00, "quantity": 50}]
 [{"operation":"buy", "unit-cost":10.00, "quantity": 10000},{"operation":"sell", "unit-cost":20.00, "quantity": 5000},{"operation":"sell", "unit-cost":5.00, "quantity": 5000}]
 
-Output:
+//Output:
 [{"tax": 0.00},{"tax": 0.00},{"tax": 0.00}]
 [{"tax": 0.00},{"tax": 10000.00},{"tax": 0.00}]
 ```
 
 Case #3
-```
-Input:
+```javascript
+//Input:
 [{"operation":"buy", "unit-cost":10.00, "quantity": 10000},{"operation":"sell", "unit-cost":5.00, "quantity": 5000},{"operation":"sell", "unit-cost":20.00, "quantity": 3000}]
 
-Output:
+//Output:
 [{"tax": 0.00},{"tax": 0.00},{"tax": 1000.00}]
 ```
 
 Case #4
-```
-Input:
+```javascript
+//Input:
 [{"operation":"buy", "unit-cost":10.00, "quantity": 10000},{"operation":"buy", "unit-cost":25.00, "quantity": 5000},{"operation":"sell", "unit-cost":15.00, "quantity": 10000}]
 
-Output:
+//Output:
 [{"tax": 0.00},{"tax": 0.00},{"tax": 0.00}]
 ```
 Case #5
-```
-Input:
+```javascript
+//Input:
 [{"operation":"buy", "unit-cost":10.00, "quantity": 10000},{"operation":"buy", "unit-cost":25.00, "quantity": 5000},{"operation":"sell", "unit-cost":15.00, "quantity": 10000},{"operation":"sell", "unit-cost":25.00, "quantity": 5000}]
 
-Output:
+//Output:
 [{"tax": 0.00},{"tax": 0.00},{"tax": 0.00},{"tax": 10000.00}]
 ```
 Case #6
-```
-Input:
+```javascript
+//Input:
 [{"operation":"buy", "unit-cost":10.00, "quantity": 10000},{"operation":"sell", "unit-cost":2.00, "quantity": 5000},{"operation":"sell", "unit-cost":20.00, "quantity": 2000},{"operation":"sell", "unit-cost":20.00, "quantity": 2000},{"operation":"sell", "unit-cost":25.00, "quantity": 1000}]
 
-Output:
+//Output:
 [{"tax": 0.00},{"tax": 0.00},{"tax": 0.00},{"tax": 0.00},{"tax": 3000.00}]
 ```
 Case #7
-```
-Input:
+```javascript
+//Input:
 [{"operation":"buy", "unit-cost":10.00, "quantity": 10000},{"operation":"sell", "unit-cost":2.00, "quantity": 5000},{"operation":"sell", "unit-cost":20.00, "quantity": 2000},{"operation":"sell", "unit-cost":20.00, "quantity": 2000},{"operation":"sell", "unit-cost":25.00, "quantity": 1000},{"operation":"buy", "unit-cost":20.00, "quantity": 10000},{"operation":"sell", "unit-cost":15.00, "quantity": 5000},{"operation":"sell", "unit-cost":30.00, "quantity": 4350},{"operation":"sell", "unit-cost":30.00, "quantity": 650}]
 
-Output:
+//Output:
 [{"tax":0.00}, {"tax":0.00}, {"tax":0.00}, {"tax":0.00}, {"tax":3000.00},{"tax":0.00}, {"tax":0.00}, {"tax":3700.00}, {"tax":0.00}]
 ```
 Case #8
-```
-Input:
+```javascript
+//Input:
 [{"operation":"buy", "unit-cost":10.00, "quantity": 10000}, {"operation":"sell", "unit-cost":50.00, "quantity": 10000}, {"operation":"buy", "unit-cost":20.00, "quantity": 10000}, {"operation":"sell", "unit-cost":50.00, "quantity": 10000}]
 
-Output:
+//Output:
 [{"tax":0.00},{"tax":80000.00},{"tax":0.00},{"tax":60000.00}]
 ```
